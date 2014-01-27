@@ -16,5 +16,6 @@ The application, as of now, includes several functionalities:
 6. Display the number of organizations in each state.
 
 Expected features to be implemented in the near future:
+
 1. Add images to the profile through the client.
 2. Usage of serialization.

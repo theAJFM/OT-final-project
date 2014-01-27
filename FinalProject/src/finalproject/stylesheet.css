@@ -1,0 +1,41 @@
+.button{
+    -fx-background-radius: 0,0,0,0;
+    -fx-border-radius: 5%;
+    -fx-background-color: #3469af;
+    -fx-cursor: hand;
+    -fx-display: block;
+    -fx-text-fill: white; 
+}
+
+.button:hover{
+    -fx-background-color: #1a4f95;
+}
+
+#menuTile{
+    -fx-background-color: #394165;
+    -fx-width: 40%;
+}
+.tab{
+    -fx-cursor: hand;
+    -fx-border-radius: 5%;
+    -fx-background-color: #394165;
+}
+.tab:selected{
+    -fx-background-color: #1a4f95;
+}
+
+.tab *.tab-label{
+    -fx-text-fill: white;    
+}
+
+#dashboardAnchor{
+    -fx-background-color: #e8ebf0;
+}
+
+#Content{
+    -fx-background-color: #e8ebf0;
+}
+
+#subAnchor{
+    -fx-background-color: white;
+}

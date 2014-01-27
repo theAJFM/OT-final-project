@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="766.0" prefWidth="1366.0" style="-fx-font-family:Sans Serif;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="finalproject.SampleController">
+  <children>
+    <ToolBar id="menuTile" disable="false" layoutX="0.0" maxHeight="-Infinity" maxWidth="227.0" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="165.0" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+        <Button fx:id="home" contentDisplay="TOP" defaultButton="false" disable="false" mnemonicParsing="false" onAction="#handleHomeAction" prefHeight="80.0" prefWidth="150.0" text="DASHBOARD" textFill="WHITE" textOverrun="ELLIPSIS" wrapText="false">
+          <font>
+            <Font name="ABeeZee-Regular" size="15.0" fx:id="x1" />
+          </font>
+          <graphic>
+            <ImageView id="home" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@images/appbar.home.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button fx:id="search" contentDisplay="TOP" defaultButton="false" disable="true" font="$x1" mnemonicParsing="false" onAction="#handleSearchAction" prefHeight="80.0" prefWidth="150.0" text="SEARCH" textFill="WHITE" textOverrun="ELLIPSIS" wrapText="false">
+          <graphic>
+            <ImageView id="search" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@images/appbar.page.search.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button fx:id="add" contentDisplay="TOP" defaultButton="false" disable="true" font="$x1" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="80.0" prefWidth="150.0" text="ADD" textFill="WHITE" textOverrun="ELLIPSIS" wrapText="false">
+          <graphic>
+            <ImageView id="search" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@images/appbar.edit.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button id="home" fx:id="location" contentDisplay="TOP" defaultButton="false" disable="true" font="$x1" mnemonicParsing="false" onAction="#handleLocationAction" prefHeight="80.0" prefWidth="150.0" text="PROVINCE" textFill="WHITE" textOverrun="ELLIPSIS" wrapText="false">
+          <graphic>
+            <ImageView id="home" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@images/appbar.city.sanfrancisco.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+      </items>
+    </ToolBar>
+    <TabPane fx:id="tabPane" prefHeight="600.0" prefWidth="635.0" rotateGraphic="false" tabClosingPolicy="UNAVAILABLE" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <tabs>
+        <Tab fx:id="loginPage" closable="false" disable="false" text="Login Page">
+          <content>
+            <AnchorPane id="Content" fx:id="loginAnchor" minHeight="0.0" minWidth="0.0" opacity="1.0" prefHeight="559.0" prefWidth="635.0" visible="true">
+              <children>
+                <Button id="button" fx:id="login" layoutX="711.0" layoutY="467.0" onAction="#handleLoginAction" text="LOGIN" textOverrun="ELLIPSIS" />
+                <TextField fx:id="idField" layoutX="514.0" layoutY="371.0" prefWidth="267.0" />
+                <Label alignment="CENTER" contentDisplay="LEFT" layoutX="409.0" layoutY="69.0" prefHeight="80.0" prefWidth="383.0" text="DATABASE CLIENT">
+                  <font>
+                    <Font name="nevis Bold" size="30.0" fx:id="x3" />
+                  </font>
+                  <textFill>
+                    <Color blue="0.541" green="0.318" red="0.231" fx:id="x4" />
+                  </textFill>
+                </Label>
+                <Label layoutX="378.0" layoutY="375.0" text="ID">
+                  <font>
+                    <Font name="nevis Bold" size="15.0" fx:id="x2" />
+                  </font>
+                </Label>
+                <Label font="$x2" layoutX="378.0" layoutY="415.0" text="PASSWORD" />
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="526.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@server.png" />
+                  </image>
+                </ImageView>
+                <Label fx:id="warningLabel" layoutX="378.0" layoutY="321.0" prefWidth="445.0" text="The email or password that you entered is invalid. Please try again." textFill="RED" visible="false" />
+                <PasswordField fx:id="passField" layoutX="514.0" layoutY="411.0" prefWidth="267.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="dashboardPage" closable="true" disable="true" text="Dashboard">
+          <content>
+            <AnchorPane fx:id="dashboardAnchor" prefHeight="200.0" prefWidth="200.0">
+              <children>
+                <AnchorPane id="subAnchor" layoutX="184.0" layoutY="38.0" minWidth="874.0" prefHeight="600.0" prefWidth="870.0">
+                  <children>
+                    <Label fx:id="userNameLabel" alignment="CENTER" contentDisplay="LEFT" layoutX="371.0" layoutY="255.0" prefHeight="45.0" prefWidth="165.0" text="FEBRYAN MARGALI" textFill="BLACK">
+                      <font>
+                        <Font name="System Bold" size="15.0" />
+                      </font>
+                    </Label>
+                    <ImageView fx:id="panoramaImage" fitHeight="221.0" fitWidth="874.0" layoutX="0.0" layoutY="0.0" opacity="0.76" pickOnBounds="true" preserveRatio="false">
+                      <image>
+                        <Image url="@user-components/panorama.jpg" />
+                      </image>
+                    </ImageView>
+                    <AnchorPane layoutX="158.0" layoutY="351.0" prefHeight="182.0" prefWidth="197.0" style="-fx-background-color: #1fbba6;&#10;">
+                      <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="49.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@images/appbar.suitcase.png" />
+                          </image>
+                        </ImageView>
+                        <Label fx:id="positionLabel" alignment="CENTER" contentDisplay="LEFT" layoutX="19.0" layoutY="132.0" prefHeight="36.0" prefWidth="165.0" text="PRODUCT MANAGER" textFill="WHITE" />
+                        <Label alignment="CENTER" contentDisplay="LEFT" layoutX="65.0" layoutY="14.0" text="POSITION" textFill="WHITE" />
+                      </children>
+                    </AnchorPane>
+                    <AnchorPane layoutX="355.0" layoutY="351.0" prefHeight="182.0" prefWidth="197.0" style="-fx-background-color: #e74c3c;&#10;">
+                      <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="49.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@images/appbar.calendar.png" />
+                          </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="LEFT" layoutX="84.0" layoutY="14.0" text="DOR" textFill="WHITE" />
+                        <Label fx:id="DORLabel" alignment="CENTER" contentDisplay="LEFT" layoutX="19.0" layoutY="132.0" prefHeight="36.0" prefWidth="165.0" text="01-01-1990" textFill="WHITE" />
+                      </children>
+                    </AnchorPane>
+                    <AnchorPane layoutX="552.0" layoutY="351.0" prefHeight="182.0" prefWidth="197.0" style="-fx-background-color: #3498db;">
+                      <children>
+                        <Label alignment="CENTER" contentDisplay="LEFT" layoutX="45.0" layoutY="14.0" prefWidth="114.0" text="ORGANIZATION" textFill="WHITE" />
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="49.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@images/appbar.paperclip.rotated.png" />
+                          </image>
+                        </ImageView>
+                        <Label fx:id="orgLabel" alignment="CENTER" contentDisplay="LEFT" layoutX="19.0" layoutY="132.0" prefHeight="36.0" prefWidth="165.0" text="YAMMER CORP." textFill="WHITE" />
+                      </children>
+                    </AnchorPane>
+                    <Label fx:id="IDLabel" alignment="CENTER" contentDisplay="LEFT" layoutX="371.0" layoutY="290.0" prefHeight="45.0" prefWidth="165.0" text="ID: 12212" textFill="BLACK">
+                      <font>
+                        <Font name="System Bold" size="12.0" />
+                      </font>
+                    </Label>
+                    <BorderPane layoutX="318.0" layoutY="51.0" prefHeight="204.0" prefWidth="270.0" style="-fx-background-color:white;">
+                      <center>
+                        <ImageView fx:id="dashboardImage" fitHeight="184.0" fitWidth="252.0" mouseTransparent="false" pickOnBounds="true" preserveRatio="true" style="">
+                          <image>
+                            <Image url="@user-components/default.png" />
+                          </image>
+                        </ImageView>
+                      </center>
+                    </BorderPane>
+                  </children>
+                </AnchorPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab id="tablePage" fx:id="tablePage" disable="true" text="Database">
+          <content>
+            <AnchorPane id="Content" fx:id="tableAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="table" layoutX="14.0" layoutY="14.0" prefHeight="582.0" prefWidth="1173.0">
+                  <columns>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="Name" fx:id="nameTable" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="57.0" text="ID" fx:id="IDTable" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="100.0" text="DOR" fx:id="dateTable" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="72.0" text="House no." fx:id="houseNoTable" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="127.0" text="Street" fx:id="streetTable" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="134.0" text="District" fx:id="districtTable" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="123.0" text="Province" fx:id="provinceTable" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="91.0" text="Postcode" fx:id="postcodeTable" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="145.0" text="Chairperson">
+                      <columns>
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Name" fx:id="chairPersonNameTable" />
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="E-mail" fx:id="chairPersonEmailTable" />
+                      </columns>
+                    </TableColumn>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" sortable="true" text="Exec Number" visible="true" fx:id="execNumTable" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="76.0" text="Executive 1" fx:id="exCom1">
+                      <columns>
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Name" fx:id="exec1NameTable" />
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Email" fx:id="email1Table" />
+                      </columns>
+                    </TableColumn>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="76.0" text="Executive 2">
+                      <columns>
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Name" fx:id="exec2NameTable" />
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Email" fx:id="email2Table" />
+                      </columns>
+                    </TableColumn>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="76.0" text="Executive 3">
+                      <columns>
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Name" fx:id="exec3NameTable" />
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Email" fx:id="email3Table" />
+                      </columns>
+                    </TableColumn>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="76.0" text="Executive 4">
+                      <columns>
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Name" fx:id="exec4NameTable" />
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Email" fx:id="email4Table" />
+                      </columns>
+                    </TableColumn>
+                  </columns>
+                </TableView>
+                <Button id="handleProfileViewing" layoutX="451.0" layoutY="634.0" mnemonicParsing="false" onAction="#handleProfileViewing" prefHeight="59.0" prefWidth="150.0" text="VIEW PROFILE" />
+                <Button id="handleProfileViewing" fx:id="edit" disable="true" layoutX="635.0" layoutY="634.0" mnemonicParsing="false" onAction="#handleEdit" prefHeight="59.0" prefWidth="150.0" text="EDIT" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="searchPage" disable="true" text="Search">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Label alignment="CENTER" contentDisplay="LEFT" font="$x3" layoutX="383.0" layoutY="24.0" prefHeight="80.0" prefWidth="436.0" text="SEARCH ORGANIZATION" textFill="$x4" />
+                <AnchorPane layoutX="242.0" layoutY="156.0" prefHeight="187.0" prefWidth="359.0" style="-fx-background-color: #00c0e1;&#10;">
+                  <children>
+                    <Label layoutX="148.0" layoutY="14.0" text="BY NAME:" textFill="WHITE" />
+                    <TextField fx:id="nameFieldSearch" layoutX="80.0" layoutY="136.0" prefWidth="200.0" />
+                    <ImageView fitHeight="98.00009999999747" fitWidth="98.00009999999747" layoutX="131.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@images/appbar.paperclip.rotated.png" />
+                      </image>
+                    </ImageView>
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="601.0" layoutY="156.0" prefHeight="187.0" prefWidth="359.0" style="-fx-background-color: #58d999;&#10;">
+                  <children>
+                    <Label layoutX="160.0" layoutY="10.0" text="BY ID:" textFill="WHITE" />
+                    <TextField fx:id="IDFieldSearch" layoutX="80.0" layoutY="136.0" prefWidth="200.0" />
+                    <ImageView fitHeight="98.00009999999747" fitWidth="98.00009999999747" layoutX="131.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@images/appbar.clipboard.paper.png" />
+                      </image>
+                    </ImageView>
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="242.0" layoutY="340.0" prefHeight="187.0" prefWidth="359.0" style="-fx-background-color: #e9c24d;&#10;">
+                  <children>
+                    <Label layoutX="60.0" layoutY="14.0" text="BY EXECUTIVE COMMITEE MEMBER:" textFill="WHITE" />
+                    <TextField fx:id="exComFieldSearch" layoutX="80.0" layoutY="136.0" prefWidth="200.0" />
+                    <ImageView fitHeight="98.00009999999747" fitWidth="98.00009999999747" layoutX="131.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@images/appbar.people.multiple.png" />
+                      </image>
+                    </ImageView>
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="601.0" layoutY="340.0" prefHeight="187.0" prefWidth="359.0" style="-fx-background-color:  #e65679;&#10;">
+                  <children>
+                    <Label layoutX="150.0" layoutY="14.0" text="BY DATE:" textFill="WHITE" />
+                    <TextField fx:id="dateFieldSearch" layoutX="80.0" layoutY="136.0" prefWidth="200.0" />
+                    <ImageView fitHeight="98.00009999999747" fitWidth="98.00009999999747" layoutX="131.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@images/appbar.calendar.png" />
+                      </image>
+                    </ImageView>
+                  </children>
+                </AnchorPane>
+                <Button id="SEARCH" fx:id="searchQuery" layoutX="522.0" layoutY="588.0" mnemonicParsing="false" onAction="#handleSearchQuery" prefHeight="45.0" prefWidth="157.0" text="SEARCH" />
+                <Label id="warningLabel" fx:id="searchError" alignment="CENTER" layoutX="379.0" layoutY="554.0" prefWidth="445.0" text="Invalid Input in the Date field!" textFill="RED" visible="false" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="profPage" disable="true" text="Organization Profile">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <AnchorPane layoutX="14.0" layoutY="47.0" prefHeight="532.0" prefWidth="384.0" style="-fx-background-color:white;">
+                  <children>
+                    <Label id="profChairPerson" fx:id="profName" alignment="CENTER" contentDisplay="LEFT" layoutX="19.0" layoutY="93.0" prefHeight="80.0" prefWidth="346.0" text="NAME" textFill="$x4">
+                      <font>
+                        <Font size="20.0" fx:id="x5" />
+                      </font>
+                    </Label>
+                    <ImageView fx:id="profileImage" fitHeight="256.0" fitWidth="256.0" layoutX="64.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="415.0" layoutY="47.0" prefHeight="154.0" prefWidth="346.0" style="-fx-background-color:white;">
+                  <children>
+                    <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="154.0" prefWidth="149.0" style="-fx-background-color: #58d999;&#10;">
+                      <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="25.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@images/appbar.clipboard.paper.png" />
+                          </image>
+                        </ImageView>
+                      </children>
+                    </AnchorPane>
+                    <Label alignment="CENTER" contentDisplay="LEFT" layoutX="12.0" layoutY="10.0" prefWidth="125.0" text="ID" textFill="WHITE" />
+                    <Label id="profChairPerson" fx:id="profID" alignment="CENTER" contentDisplay="LEFT" font="$x5" layoutX="167.0" layoutY="37.0" prefHeight="80.0" prefWidth="165.0" text="NAME" textFill="#58d999" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="415.0" layoutY="425.0" prefHeight="154.0" prefWidth="346.0" style="-fx-background-color:white;">
+                  <children>
+                    <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="154.0" prefWidth="149.0" style="-fx-background-color: #4f5869;&#10;">
+                      <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="25.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@images/appbar.city.sanfrancisco.png" />
+                          </image>
+                        </ImageView>
+                      </children>
+                    </AnchorPane>
+                    <Label fx:id="profStreet" alignment="CENTER" contentDisplay="LEFT" layoutX="165.0" layoutY="14.0" prefWidth="165.0" text="BLABLA">
+                      <textFill>
+                        <Color blue="0.412" green="0.345" red="0.310" fx:id="x6" />
+                      </textFill>
+                    </Label>
+                    <Label alignment="CENTER" contentDisplay="LEFT" layoutX="12.0" layoutY="10.0" prefWidth="125.0" text="LOCATION" textFill="WHITE" />
+                    <Label fx:id="profHouseNo" alignment="CENTER" contentDisplay="LEFT" layoutX="165.0" layoutY="42.0" prefWidth="165.0" text="BLABLA" textFill="$x6" />
+                    <Label fx:id="profDistrict" alignment="CENTER" contentDisplay="LEFT" layoutX="165.0" layoutY="70.0" prefWidth="165.0" text="BLABLA" textFill="$x6" />
+                    <Label fx:id="profProvince" alignment="CENTER" contentDisplay="LEFT" layoutX="165.0" layoutY="98.0" prefWidth="165.0" text="BLABLA" textFill="$x6" />
+                    <Label fx:id="profPostcode" alignment="CENTER" contentDisplay="LEFT" layoutX="165.0" layoutY="126.0" prefWidth="165.0" text="BLABLA" textFill="$x6" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="415.0" layoutY="236.0" prefHeight="154.0" prefWidth="346.0" style="-fx-background-color:white;">
+                  <children>
+                    <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="154.0" prefWidth="149.0" style="-fx-background-color: #7658f8;&#10;">
+                      <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="25.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@images/appbar.people.png" />
+                          </image>
+                        </ImageView>
+                      </children>
+                    </AnchorPane>
+                    <Label id="prof" fx:id="profChairPerson" alignment="CENTER" contentDisplay="LEFT" layoutX="165.0" layoutY="67.0" prefWidth="165.0" text="BLABLA" textFill="#7658f8" />
+                    <Label alignment="CENTER" contentDisplay="LEFT" layoutX="12.0" layoutY="10.0" prefWidth="125.0" text="CHAIRPERSON" textFill="WHITE" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="820.0" layoutY="47.0" prefHeight="154.0" prefWidth="346.0" style="-fx-background-color:white;">
+                  <children>
+                    <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="154.0" prefWidth="149.0" style="-fx-background-color: #e65679;&#10;">
+                      <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="25.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@images/appbar.calendar.png" />
+                          </image>
+                        </ImageView>
+                      </children>
+                    </AnchorPane>
+                    <Label fx:id="profDate" alignment="CENTER" contentDisplay="LEFT" layoutX="165.0" layoutY="67.0" prefWidth="165.0" text="BLABLA" textFill="#e65679" underline="false" />
+                    <Label alignment="CENTER" contentDisplay="LEFT" layoutX="12.0" layoutY="10.0" prefWidth="125.0" text="DOR" textFill="WHITE" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="820.0" layoutY="236.0" prefHeight="154.0" prefWidth="346.0" style="-fx-background-color:white;">
+                  <children>
+                    <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="154.0" prefWidth="149.0" style="-fx-background-color: #e9c24d;&#10;">
+                      <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="25.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@images/appbar.people.multiple.png" />
+                          </image>
+                        </ImageView>
+                      </children>
+                    </AnchorPane>
+                    <Label fx:id="profExCom1" alignment="CENTER" contentDisplay="LEFT" layoutX="165.0" layoutY="14.0" prefWidth="165.0" text="BLABLA">
+                      <textFill>
+                        <Color blue="0.302" green="0.761" red="0.914" fx:id="x7" />
+                      </textFill>
+                    </Label>
+                    <Label alignment="CENTER" contentDisplay="LEFT" layoutX="12.0" layoutY="10.0" prefWidth="125.0" text="EXECUTIVES" textFill="WHITE" />
+                    <Label fx:id="profExCom3" alignment="CENTER" contentDisplay="LEFT" layoutX="165.0" layoutY="70.0" prefWidth="165.0" text="BLABLA" textFill="$x7" />
+                    <Label fx:id="profExCom2" alignment="CENTER" contentDisplay="LEFT" layoutX="165.0" layoutY="42.0" prefWidth="165.0" text="BLABLA" textFill="$x7" />
+                    <Label fx:id="profExCom4" alignment="CENTER" contentDisplay="LEFT" layoutX="165.0" layoutY="98.0" prefWidth="165.0" text="BLABLA" textFill="$x7" />
+                  </children>
+                </AnchorPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="addPage" disable="true" text="Add Organization">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <AnchorPane layoutX="82.0" layoutY="79.0" prefHeight="461.0" prefWidth="315.0" style="-fx-background-color:#3498db;">
+                  <children>
+                    <TextField fx:id="addHouseNo" layoutX="44.0" layoutY="156.0" prefHeight="38.0" prefWidth="228.0" promptText="House No." />
+                    <TextField fx:id="addStreetName" layoutX="44.0" layoutY="213.0" prefHeight="38.0" prefWidth="228.0" promptText="Street Name" />
+                    <TextField fx:id="addDistrict" layoutX="44.0" layoutY="270.0" prefHeight="38.0" prefWidth="228.0" promptText="District" />
+                    <TextField fx:id="addPostcode" layoutX="44.0" layoutY="384.0" prefHeight="38.0" prefWidth="228.0" promptText="Postcode" />
+                    <TextField fx:id="addProvince" layoutX="44.0" layoutY="327.0" prefHeight="38.0" prefWidth="228.0" promptText="Province" />
+                    <TextField fx:id="addOrganizationName" layoutX="44.0" layoutY="42.0" prefHeight="38.0" prefWidth="228.0" promptText="Organization Name" text="" />
+                    <TextField fx:id="addOrganizationID" layoutX="44.0" layoutY="99.0" prefHeight="38.0" prefWidth="228.0" promptText="Organization ID" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="841.0" layoutY="79.0" minHeight="136.9998779296875" prefHeight="639.0" prefWidth="315.0" style="-fx-background-color:#1fbba6;">
+                  <children>
+                    <TextField fx:id="addExCom1" layoutX="44.0" layoutY="32.0" prefHeight="38.0" prefWidth="228.0" promptText="1st Executive name" style="-fx-background:#1fbba6;" />
+                    <TextField fx:id="addExCom1Pass" layoutX="44.0" layoutY="132.0" prefHeight="38.0" prefWidth="228.0" promptText="Password" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom1" fx:id="addExCom1Email" layoutX="44.0" layoutY="82.0" prefHeight="38.0" prefWidth="228.0" promptText="Email" style="-fx-background:#1fbba6;" />
+                    <TextField fx:id="addExCom2" layoutX="44.0" layoutY="182.0" prefHeight="38.0" prefWidth="228.0" promptText="2nd Executive name" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom1" fx:id="addExCom2Email" layoutX="44.0" layoutY="232.0" prefHeight="38.0" prefWidth="228.0" promptText="Email" style="-fx-background:#1fbba6;" />
+                    <TextField fx:id="addExCom2Pass" layoutX="44.0" layoutY="282.0" prefHeight="38.0" prefWidth="228.0" promptText="Password" style="-fx-background:#1fbba6;" />
+                    <TextField fx:id="addExCom3" layoutX="44.0" layoutY="332.0" prefHeight="38.0" prefWidth="228.0" promptText="3rd Executive name" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom1" fx:id="addExCom3Email" layoutX="44.0" layoutY="382.0" prefHeight="38.0" prefWidth="228.0" promptText="Email" style="-fx-background:#1fbba6;" />
+                    <TextField fx:id="addExCom3Pass" layoutX="44.0" layoutY="432.0" prefHeight="38.0" prefWidth="228.0" promptText="Password" style="-fx-background:#1fbba6;" />
+                    <TextField fx:id="addExCom4" layoutX="44.0" layoutY="482.0" prefHeight="38.0" prefWidth="228.0" promptText="4th Executive name" style="-fx-background:#1fbba6;" text="" />
+                    <TextField id="addExCom1" fx:id="addExCom4Email" layoutX="44.0" layoutY="532.0" prefHeight="38.0" prefWidth="228.0" promptText="Email" style="-fx-background:#1fbba6;" />
+                    <TextField fx:id="addExCom4Pass" layoutX="44.0" layoutY="582.0" prefHeight="38.0" prefWidth="228.0" promptText="Password" style="-fx-background:#1fbba6;" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="466.0" layoutY="79.0" prefHeight="269.0" prefWidth="315.0" style="-fx-background-color:#e74c3c;">
+                  <children>
+                    <TextField fx:id="addEmail" layoutX="44.0" layoutY="99.0" prefHeight="38.0" prefWidth="228.0" promptText="Email" style="-fx-background:#e74c3c;" />
+                    <TextField fx:id="addPassword" layoutX="44.0" layoutY="156.0" prefHeight="38.0" prefWidth="228.0" promptText="Password" style="-fx-background:#e74c3c;" />
+                    <Button layoutX="129.0" layoutY="212.0" mnemonicParsing="false" onAction="#addOrganization" text="ADD" />
+                    <TextField fx:id="addChairPersonName" layoutX="44.0" layoutY="42.0" prefHeight="38.0" prefWidth="228.0" promptText="Chairperson Name" style="-fx-background:#e74c3c;" />
+                  </children>
+                </AnchorPane>
+                <Label alignment="CENTER" contentDisplay="LEFT" font="$x3" layoutX="405.0" layoutY="16.0" prefHeight="80.0" prefWidth="436.0" text="ADD ORGANIZATION" textFill="$x4" />
+                <Label id="warningLabel" fx:id="errorAdd" alignment="CENTER" layoutX="412.0" layoutY="380.0" prefWidth="422.0" text="Invalid Input in one of the Fields!" textFill="RED" visible="false" />
+                <Label id="warningLabel" fx:id="errorAdd2" alignment="CENTER" layoutX="82.0" layoutY="630.0" prefWidth="556.0" text="Remember that ID should be a 3-digit integer and postcode should be an integer" textFill="RED" visible="false" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="locationPage" disable="true" text="Location">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <AnchorPane layoutX="294.0" layoutY="58.0" prefHeight="609.0" prefWidth="614.0" style="-fx-background-color: #4f5869;">
+                  <children>
+                    <TextField id="location" fx:id="searchLocation" layoutX="207.0" layoutY="54.0" prefWidth="200.0" />
+                    <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="257.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@images/appbar.city.sanfrancisco.png" />
+                      </image>
+                    </ImageView>
+                    <Label alignment="CENTER" contentDisplay="LEFT" font="$x3" layoutX="89.0" layoutY="119.0" prefHeight="80.0" prefWidth="436.0" text="SEARCH RESULT:" textFill="WHITE" />
+                    <Label id="searchLocation" fx:id="locationResult" alignment="CENTER" contentDisplay="LEFT" layoutX="89.0" layoutY="361.0" prefHeight="80.0" prefWidth="436.0" text="" textFill="WHITE">
+                      <font>
+                        <Font name="nevis Bold" size="50.0" fx:id="x8" />
+                      </font>
+                    </Label>
+                    <Button id="handleProfileViewing" layoutX="232.0" layoutY="501.0" mnemonicParsing="false" onAction="#handleLocationSearch" prefHeight="59.0" prefWidth="150.0" text="SEARCH" />
+                  </children>
+                </AnchorPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="editPage" disable="true" text="Edit Organization">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Label alignment="CENTER" contentDisplay="LEFT" font="$x3" layoutX="405.0" layoutY="16.0" prefHeight="80.0" prefWidth="436.0" text="EDIT ORGANIZATION" textFill="#3b518a" />
+                <AnchorPane layoutX="82.0" layoutY="79.0" prefHeight="461.0" prefWidth="315.0" style="-fx-background-color:#3498db;">
+                  <children>
+                    <TextField id="addHouseNo" fx:id="editHouseNo" layoutX="44.0" layoutY="156.0" prefHeight="38.0" prefWidth="228.0" promptText="House No." />
+                    <TextField id="addStreetName" fx:id="editStreetName" layoutX="44.0" layoutY="213.0" prefHeight="38.0" prefWidth="228.0" promptText="Street Name" />
+                    <TextField id="addDistrict" fx:id="editDistrict" layoutX="44.0" layoutY="270.0" prefHeight="38.0" prefWidth="228.0" promptText="District" />
+                    <TextField id="addPostcode" fx:id="editPostcode" layoutX="44.0" layoutY="384.0" prefHeight="38.0" prefWidth="228.0" promptText="Postcode" />
+                    <TextField id="addProvince" fx:id="editProvince" layoutX="44.0" layoutY="327.0" prefHeight="38.0" prefWidth="228.0" promptText="Province" />
+                    <TextField id="addOrganizationName" fx:id="editOrganizationName" layoutX="44.0" layoutY="42.0" prefHeight="38.0" prefWidth="228.0" promptText="Organization Name" text="" />
+                    <TextField id="addOrganizationID" fx:id="editOrganizationID" layoutX="44.0" layoutY="99.0" prefHeight="38.0" prefWidth="228.0" promptText="Organization ID" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="841.0" layoutY="79.0" minHeight="136.9998779296875" prefHeight="639.0" prefWidth="315.0" style="-fx-background-color:#1fbba6;">
+                  <children>
+                    <TextField id="addExCom1" fx:id="editExCom1" layoutX="44.0" layoutY="32.0" prefHeight="38.0" prefWidth="228.0" promptText="1st Executive name" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom1Pass" fx:id="editExCom1Pass" layoutX="44.0" layoutY="132.0" prefHeight="38.0" prefWidth="228.0" promptText="Password" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom1" fx:id="editExCom1Email" layoutX="44.0" layoutY="82.0" prefHeight="38.0" prefWidth="228.0" promptText="Email" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom2" fx:id="editExCom2" layoutX="44.0" layoutY="182.0" prefHeight="38.0" prefWidth="228.0" promptText="2nd Executive name" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom1" fx:id="editExCom2Email" layoutX="44.0" layoutY="232.0" prefHeight="38.0" prefWidth="228.0" promptText="Email" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom2Pass" fx:id="editExCom2Pass" layoutX="44.0" layoutY="282.0" prefHeight="38.0" prefWidth="228.0" promptText="Password" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom3" fx:id="editExCom3" layoutX="44.0" layoutY="332.0" prefHeight="38.0" prefWidth="228.0" promptText="3rd Executive name" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom1" fx:id="editExCom3Email" layoutX="44.0" layoutY="382.0" prefHeight="38.0" prefWidth="228.0" promptText="Email" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom3Pass" fx:id="editExCom3Pass" layoutX="44.0" layoutY="432.0" prefHeight="38.0" prefWidth="228.0" promptText="Password" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom4" fx:id="editExCom4" layoutX="44.0" layoutY="482.0" prefHeight="38.0" prefWidth="228.0" promptText="4th Executive name" style="-fx-background:#1fbba6;" text="" />
+                    <TextField id="addExCom1" fx:id="editExCom4Email" layoutX="44.0" layoutY="532.0" prefHeight="38.0" prefWidth="228.0" promptText="Email" style="-fx-background:#1fbba6;" />
+                    <TextField id="addExCom4Pass" fx:id="editExCom4Pass" layoutX="44.0" layoutY="582.0" prefHeight="38.0" prefWidth="228.0" promptText="Password" style="-fx-background:#1fbba6;" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="466.0" layoutY="79.0" prefHeight="269.0" prefWidth="315.0" style="-fx-background-color:#e74c3c;">
+                  <children>
+                    <TextField id="addEmail" fx:id="editEmail" layoutX="44.0" layoutY="99.0" prefHeight="38.0" prefWidth="228.0" promptText="Email" style="-fx-background:#e74c3c;" />
+                    <TextField id="addPassword" fx:id="editPassword" layoutX="44.0" layoutY="156.0" prefHeight="38.0" prefWidth="228.0" promptText="Password" style="-fx-background:#e74c3c;" />
+                    <Button layoutX="129.0" layoutY="212.0" mnemonicParsing="false" onAction="#editOrganization" text="EDIT" />
+                    <TextField id="addChairPersonName" fx:id="editChairPersonName" layoutX="44.0" layoutY="42.0" prefHeight="38.0" prefWidth="228.0" promptText="Chairperson Name" style="-fx-background:#e74c3c;" />
+                  </children>
+                </AnchorPane>
+                <Label id="warningLabel" fx:id="errorEdit" alignment="CENTER" layoutX="412.0" layoutY="391.0" prefWidth="422.0" text="Invalid Input in one of the Fields!" textFill="RED" visible="false" />
+                <Label id="warningLabel" fx:id="errorEdit2" alignment="CENTER" layoutX="82.0" layoutY="641.0" prefWidth="556.0" text="Remember that ID should be a 3-digit integer and postcode should be an integer" textFill="RED" visible="false" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="provincePage" disable="true" text="State">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <AnchorPane layoutX="63.0" layoutY="24.0" prefHeight="673.0" prefWidth="1076.0" style="-fx-background-color: #4f5869;">
+                  <children>
+                    <Label alignment="CENTER" contentDisplay="LEFT" font="$x3" layoutX="174.0" layoutY="26.0" prefHeight="80.0" prefWidth="729.0" text="NUMBER OF ORGANIZATION IN EACH STATE" textFill="WHITE" />
+                    <Label id="searchLocation" alignment="CENTER" contentDisplay="LEFT" font="$x8" layoutX="89.0" layoutY="361.0" prefHeight="80.0" prefWidth="436.0" text="" textFill="WHITE" />
+                    <Button id="handleProfileViewing" layoutX="463.0" layoutY="593.0" mnemonicParsing="false" onAction="#handleLocationSearch" prefHeight="59.0" prefWidth="150.0" text="SEARCH" />
+                    <ListView fx:id="provinceList" layoutX="174.0" layoutY="138.0" prefHeight="406.0" prefWidth="323.0" />
+                    <ListView fx:id="amountList" layoutX="580.0" layoutY="138.0" prefHeight="406.0" prefWidth="323.0" />
+                    <Label alignment="CENTER" contentDisplay="LEFT" layoutX="270.0" layoutY="95.0" prefHeight="45.0" prefWidth="131.0" text="STATE" textFill="WHITE">
+                      <font>
+                        <Font name="nevis Bold" size="20.0" fx:id="x9" />
+                      </font>
+                    </Label>
+                    <Label alignment="CENTER" contentDisplay="LEFT" font="$x9" layoutX="676.0" layoutY="93.0" prefHeight="45.0" prefWidth="131.0" text="AMOUNT" textFill="WHITE" />
+                  </children>
+                </AnchorPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>
